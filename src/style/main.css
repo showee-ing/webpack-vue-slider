@@ -1,0 +1,59 @@
+* {
+    margin:0;
+    padding:0;
+}
+.container {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    margin:auto;
+    box-shadow: 0 0 5px green;
+    overflow: hidden;
+}
+.wrap {
+    position: absolute;
+    width: 3000px;
+    height: 400px;
+}
+.container .wrap li {
+    float: left;
+    width: 600px;
+    height: 400px;
+    list-style-type:none ;
+}
+.container .wrap .img {
+    float: left;
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+}
+.container .dot {
+    position: absolute;
+    right: 150px;
+    bottom:20px;
+    width: 200px;
+    height: 10px;
+    z-index: 2;
+}
+.container .dot li{
+    margin-left: 5px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: gray;
+    text-align: center;
+    color:white;
+    cursor: pointer;
+    font-size:5px;
+}
+.container .dot .active{
+    background-color: green;
+}
+/*.container .dot .active{*/
+    /*background: none;*/
+/*}*/
