@@ -18,19 +18,19 @@
             return {
                 sliders:[
                     {
-                        img:'./images/1.jpg'
+                        img:require('./images/1.jpg')
                     },
                     {
-                        img:'./images/2.jpg'
+                        img:require('./images/2.jpg')
                     },
                     {
-                        img:'./images/3.jpg'
+                        img:require('./images/3.jpg')
                     },
                     {
-                        img:'./images/4.jpg'
+                        img:require('./images/4.jpg')
                     },
                     {
-                        img:'./images/5.jpg'
+                        img:require('./images/5.jpg')
                     }
                 ],
                 currentIndex:0,
@@ -71,7 +71,7 @@
                 this.timer = null
             },
             change(dotIndex){
-                console.log(dotIndex);
+                //console.log(dotIndex);
                 this.currentIndex=dotIndex-1;
             }
         }

@@ -6,9 +6,9 @@ const { VueLoaderPlugin } = require('vue-loader');
 module.exports = {
     entry: './src/main.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '/dist'),
         filename: "demo.js",
-        // publicPath: "./dist/"
+        // publicPath: "./"
     },
     mode:'development',
     module: {
@@ -23,12 +23,13 @@ module.exports = {
                 loader: 'style-loader!css-loader'
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
-                use: ['file-loader']
-            },
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                use: ['url-loader'],
+                test:/\.(jpg|png|gif|bmp|jpeg)$/,
+                loader: 'url-loader',
+                options: {
+                    limit:10240,
+                    name:"images/[hash:8].[name].[ext]",
+                    esModule: false
+                }
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
@@ -55,11 +56,6 @@ module.exports = {
                 NODE_ENV: '"production"'
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
     ],
     devServer: {
         contentBase: "./dist"
